@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Home Template {% endblock %}
+
+{% block body %}
+<h1>Users</h1>
+<ul>
+    {%for i in range(3)%}
+    <li>"User {{i}}"</li>
+    {%endfor%}
+</ul>
+<a href="/add">
+    <button>Add User</button>
+</a>
+{% endblock %}

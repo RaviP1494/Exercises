@@ -34,4 +34,4 @@ CREATE TABLE projectiles(
     orbits_around INTEGER REFERENCES projectiles (id),
     period_in_years FLOAT NOT NULL,
     _name VARCHAR(63) NOT NULL
-  )
+  );

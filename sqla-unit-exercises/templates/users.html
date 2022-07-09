@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} User Listing {% endblock %}
+
+{% block body %}
+<h1>Users</h1>
+<ul>
+    {%for i in range(3)%}
+    <li><a href="/users/{{i}}">User{{i}}</a></li>
+    {%endfor%}
+</ul>
+<a href="/users/add">
+    <button>Add User</button>
+</a>
+{% endblock %}

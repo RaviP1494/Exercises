@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit User {% endblock %}
+
+{% block body %}
+
+<h1>Add a user</h1>
+
+<form action="/users/create" method="post">
+    <div><label for="fname">First Name</label>
+        <input id="fname" type="text">
+    </div>
+    <div><label for="lname">Last Name</label>
+        <input id="lname" type="text">
+    </div>
+    <div><label for="pic">Image URL</label>
+        <input id="pic" type="text">
+    </div>
+    <button>Submit</button>
+</form>
+<a href="/users">
+    <button>Cancel</button>
+</a>
+{% endblock %}
