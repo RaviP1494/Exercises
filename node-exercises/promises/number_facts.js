@@ -6,6 +6,12 @@ const queueDisplay = document.querySelector("#queueDisplay");
 const findFourBtn = document.querySelector("#findFourBtn");
 const queue = [];
 
+function addToFactList(fact) {
+    const el = document.createElement("li");
+    el.innerText = fact;
+    fact_list.appendChild(el);
+}
+
 findBtn.addEventListener('click', function (e) {
     e.preventDefault();
     let batchStr = '';
@@ -32,9 +38,9 @@ findBtn.addEventListener('click', function (e) {
                     addToFactList(data.data[num]);
                 }
                 queue.length = 0;
-                queueDisplay.innerText = 0;
+                queueDisplay.innerText = '';
             }
-            else{
+            else {
                 addToFactList(data.data.text);
             }
         })
@@ -50,18 +56,25 @@ queueBtn.addEventListener('click', function (e) {
 
 findFourBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    let request = axios.get(`http://numbersapi.com/${numInput.value}?json`);
-    request.then(data => addToFactList(data.data.text));
-    request = axios.get(`http://numbersapi.com/${numInput.value}?json`);
-    request.then(data => addToFactList(data.data.text));
-    request = axios.get(`http://numbersapi.com/${numInput.value}?json`);
-    request.then(data => addToFactList(data.data.text));
-    request = axios.get(`http://numbersapi.com/${numInput.value}?json`);
-    request.then(data => addToFactList(data.data.text));
+    axios.get(`http://numbersapi.com/${numInput.value}?json`)
+        .then(data => {
+            addToFactList(data.data.text);
+            return axios.get(`http://numbersapi.com/${numInput.value}?json`);
+        })
+        .then(data => {
+            addToFactList(data.data.text);
+            return axios.get(`http://numbersapi.com/${numInput.value}?json`);
+        })
+        .then(data => {
+            addToFactList(data.data.text);
+            return axios.get(`http://numbersapi.com/${numInput.value}?json`);
+        })
+        .then(data => {
+            addToFactList(data.data.text);
+        })
+        .catch(err => {
+            console.log(err);
+        })
 })
 
-function addToFactList(fact) {
-    const el = document.createElement("li");
-    el.innerText = fact;
-    fact_list.appendChild(el);
-}
+

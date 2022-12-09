@@ -2,7 +2,7 @@ const drawBtn = document.querySelector('#drawBtn');
 const cardList = document.querySelector('#cardList');
 let deck_id;
 
-let url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1";
+const url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1";
 
 drawBtn.addEventListener('click', function (e) {
     e.preventDefault();
@@ -21,7 +21,8 @@ drawBtn.addEventListener('click', function (e) {
             else {
                 deck_id = data.data.deck_id;
                 console.log(data);
-                axios.get(`https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=1`).then(data => addToCardList(data.data.cards[0]));
+                axios.get(`https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=1`)
+                    .then(data => addToCardList(data.data.cards[0]));
             }
         })
         .catch(err => console.log(err));

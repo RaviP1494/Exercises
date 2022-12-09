@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Facts with Async/Await</title>
+</head>
+
+<body>
+    <div id="inputDiv">
+        <input id="numInput" type="number">
+        <button id="addQBtn">Add to queue</button>
+        <button id="queueSubmitBtn">Search queue</button>
+        <button id="clearQBtn">Clear queue</button>
+        <br>
+        <button id="oneSubmitBtn">Find one fact</button>
+        <button id="fourSubmitBtn">Find four facts</button>
+    </div>
+    <p id="queueDisplay"></p>
+    <ul id="factList">
+
+    </ul>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="number_facts.js"></script>
+</body>
+
+</html>
+
+<!--
+    add to queue
+    clear queue
+    ----
+    search one
+    search queue
+    search multiple facts
+ -->
