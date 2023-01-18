@@ -1,0 +1,14 @@
+{
+  "name": "markov-machine",
+  "version": "1.0.0",
+  "description": "text generator based on input",
+  "main": "makeText.js",
+  "scripts": {
+    "test": "markov.test.js"
+  },
+  "author": "RaviP1494",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.3"
+  }
+}
