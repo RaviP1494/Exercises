@@ -21,7 +21,7 @@ async function drawCards() {
     for (const i of request.data.cards) {
         addToCardList(i);
     }
-    if(request.data.remaining === 0){
+    if (request.data.remaining === 0) {
         setTimeout(shuffleDeck, 2000);
     }
 }

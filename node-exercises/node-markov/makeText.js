@@ -6,7 +6,7 @@ const { MarkovMachine } = require('./markov');
 
 const argv = process.argv;
 
-if(argv[2] === 'file'){
+if (argv[2] === 'file') {
     const p = argv[3];
     fs.readFile(p, 'utf8', function (err, data) {
         if (err) {
@@ -16,7 +16,7 @@ if(argv[2] === 'file'){
         respond(data);
     });
 }
-else if(argv[2] === 'url'){
+else if (argv[2] === 'url') {
     const u = argv[3];
     axios.get(u)
         .then(data => respond(data.data))
@@ -27,11 +27,11 @@ else if(argv[2] === 'url'){
         });
 }
 
-else{
+else {
     console.log('Incorrect input type');
 }
 
-function respond(text){
+function respond(text) {
     const mm = new MarkovMachine(text);
     console.log(mm.makeText());
 }

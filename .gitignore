@@ -1,1 +1,5 @@
 sqla-unit-exercises/venv/
+node-exercises/node_intro/node_modules
+node-exercises/node-markov/node_modules
+node-exercises/express-calculator/node_modules
+node-exercises/express-middleware/node_modules

@@ -1,14 +1,14 @@
-const {MarkovMachine} = require('./markov');
+const { MarkovMachine } = require('./markov').default;
 
 const test_text = "the cat is in the hat and the hat hates the apple in the cat";
-describe("Markov Machine Test", function(){
-    beforeEach(function(){
-        this.mm = new MarkovMachine(test_text);
+describe("Markov Machine Test", function () {
+    beforeEach(function () {
+        this.markovMachine = new MarkovMachine(test_text);
     })
-    test("testing chain pattern on random word in input", function(){
+    test("testing chain pattern on random word in input", function () {
         const words = test_text.split(" ");
-        let random_idx = Math.floor(Math.random() * words.length - 1);
-        let random_word = words[random_idx];
-        expect(this.mm.chains[random_word]).toContain(words[random_idx + 1]);
+        const random_idx = Math.floor(Math.random() * words.length - 1);
+        const random_word = words[random_idx];
+        expect(this.markovMachine.chains[random_word]).toContain(words[random_idx + 1]);
     })
 });

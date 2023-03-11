@@ -5,10 +5,12 @@ const app = express();
 
 app.get('/mean', function (req, res, next) {
     try {
+        const queryStr = req.query['nums'] ? req.query['nums'] : null;
         if (!req.query['nums']) {
             throw new ExpressError('nums are required', 400);
         }
         const nums = req.query['nums'].split(',');
+        //const value = mean(nums);
         let total = 0;
         for (const num of nums) {
             const n = parseInt(num);

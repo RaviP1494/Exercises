@@ -20,17 +20,17 @@ class MarkovMachine {
     const uniqueWords = new Set(this.words);
     let chains = {}
     uniqueWords.forEach(word => chains[word] = []);
-    for(let i = 0; i<this.words.length-1; i++){
-      if(i !== this.words.length){
-        if(!(chains[this.words[i]].includes(this.words[i+1]))){
-          chains[this.words[i]].push(this.words[i+1]);  
+    for (let i = 0; i < this.words.length - 1; i++) {
+      if (i !== this.words.length) {
+        if (!(chains[this.words[i]].includes(this.words[i + 1]))) {
+          chains[this.words[i]].push(this.words[i + 1]);
         }
       }
     }
     this.chains = chains;
   }
 
-  getRandomWord(a){
+  getRandomWord(a) {
     return a[Math.floor(Math.random() * a.length)];
   }
   /** return random text from chains */
@@ -39,13 +39,13 @@ class MarkovMachine {
     let i = this.getRandomWord(this.words);
     let retTextArray = [];
     retTextArray.push(i);
-    while(retTextArray.length < numWords){
+    while (retTextArray.length < numWords) {
       let lastWord = retTextArray[retTextArray.length - 1];
       let nextWord = this.getRandomWord(this.chains[lastWord]);
-      if(nextWord){
+      if (nextWord) {
         retTextArray.push(nextWord);
       }
-      else{
+      else {
         break;
       }
     }
