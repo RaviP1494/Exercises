@@ -2,15 +2,16 @@
 
 const express = require("express");
 const companiesRoutes = require("./routes/companies");
-const invoiceRoutes = require('./routes/invoices');
+const invoiceRoutes = require("./routes/invoices");
+const industryRoutes = require("./routes/industries");
 
 const app = express();
-const ExpressError = require("./expressError")
+const ExpressError = require("./expressError");
 
 app.use(express.json());
 app.use("/companies", companiesRoutes);
 app.use("/invoices", invoiceRoutes);
-
+app.use("/industries", industryRoutes);
 
 /** 404 handler */
 
@@ -25,14 +26,13 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
     error: {
       status: err.status,
-      message: err.message
-    }
+      message: err.message,
+    },
   });
 });
 
-app.listen(3000, function () {
-  console.log('server running');
-})
-
+//app.listen(3000, function () {
+//  console.log("server running");
+//});
 
 module.exports = app;
