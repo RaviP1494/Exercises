@@ -1,0 +1,30 @@
+ctrl + shift + .
+list of all definitions
+
+shift + i
+go to start of text
+
+ctrl + \
+split window
+
+ctrl + 1, 2, 3, 4
+open window 1, 2, 3, 4
+
+ctrl + w + w
+switch to next window
+
+ctrl + shift + ,
+close current tab
+
+ctrl + shift + e
+open file explorer
+
+ctrl + shift + f
+search entire workspace text
+
+/
+search current file text
+
+ctrl + b
+hide sidebar
+
