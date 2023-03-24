@@ -1,0 +1,45 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://bookstore.com/partialbook.json",
+    "type": "object",
+    "title": "Partial Book Schema",
+    "required": [
+        "isbn"
+    ],
+    "properties": {
+        "isbn": {
+            "type": "string",
+            "title": "The isbn Schema"
+        },
+        "amazon_url": {
+            "type": "string",
+            "title": "The amazon_url Schema"
+        },
+        "author": {
+            "type": "string",
+            "title": "The author Schema"
+        },
+        "language": {
+            "type": "string",
+            "title": "The language Schema"
+        },
+        "pages": {
+            "type": "integer",
+            "title": "The pages Schema",
+            "exclusiveMinimum": 0
+        },
+        "publisher": {
+            "type": "string",
+            "title": "The publisher Schema"
+        },
+        "title": {
+            "type": "string",
+            "title": "The title Schema"
+        },
+        "year": {
+            "type": "integer",
+            "title": "The year Schema",
+            "maximum": 2023
+        }
+    }
+}
